@@ -4,7 +4,14 @@
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		
+		<script>
+	        $(function() {
+	          $.scrollify({
+	            section : ".section-class-name",
+	            sectionName : "section-name"
+	          });
+	        });
+       </script>
 		<style>
 			/*
 			Fade content bs-carousel with hero headers
@@ -15,6 +22,9 @@
 			/********************************/
 			/*       Fade Bs-carousel       */
 			/********************************/
+			.navbar{
+				margin-bottom: 0; !important
+			}
 			.fade-carousel {
 			    position: relative;
 			    height: 100vh;
@@ -132,20 +142,25 @@
 			@media screen and (max-width: 640px){
 			    .hero h1 { font-size: 4em; }    
 			}
+			@font-face {
+			    font-family: "My Custom Font";
+			    src: url(Insanibu.ttf) format("truetype");
+			}
 			html,body {
 				height:100%;
-			    background:center no-repeat fixed url('/assets/example/bg_suburb.jpg');
+			    background:center no-repeat fixed url('carrot-2309814_1920.jpg');
 			    background-size: cover;
 			    padding: 0;
 			    margin: 0;
+			    font-family: "My Custom Font" format('truetype');
 			}
 
 			.icon-bar {
-				background-color:#fff;
+				background-color:rgba(236, 183, 67, 0.8);
 			}
 
 			.navbar-trans {
-				background-color:#279ddd;
+				background-color:rgba(236, 183, 67, 0.8);
 			    color:#fff;
 			}
 
@@ -185,7 +200,7 @@
 			}
 			  
 			#section1 {
-				background-color: #168ccc;
+				background-color: rgba(236, 183, 67, 0.8);
 			    color:#dedeff;
 			}
 			  
@@ -195,7 +210,7 @@
 			}
 			  
 			#section3 {
-				background-color: #168ccc;
+				background-color: rgba(236, 183, 67, 0.8);
 			    color:#ddd;
 			}
 
@@ -209,7 +224,7 @@
 			}
 
 			#section6 {
-				background-color: #168ccc;
+				background-color: rgba(236, 183, 67, 0.8);
 			    color:#ddd;
 			}
 
@@ -230,29 +245,9 @@
 			    background-color:transparent;
 				color:#fff;
 			}
+			
 		</style>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<script>
-			/* activate scrollspy menu */
-			$('body').scrollspy({
-			  target: '#navbar-collapsible',
-			  offset: 50
-			});
-
-			/* smooth scrolling sections */
-			$('a[href*=#]:not([href=#])').click(function() {
-			    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			      var target = $(this.hash);
-			      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-			      if (target.length) {
-			        $('html,body').animate({
-			          scrollTop: target.offset().top - 50
-			        }, 1000);
-			        return false;
-			      }
-			    }
-			});
-		</script>
 	</head>
 	<body>
 		<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
@@ -344,7 +339,7 @@
 		  </div>
 		</nav>
 
-		<section class="container-fluid" id="section1">
+		<section class="container-fluid" id="section1" data-section-name="home">
 		  	<h1 class="text-center v-center">Sectionalize.</h1>
 		 	
 		  	<div class="container">
